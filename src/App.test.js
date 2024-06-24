@@ -11,3 +11,15 @@ test("First React app case", () => {
   expect(title).toBeInTheDocument();
   expect(text2).toBeInTheDocument();
 });
+
+test("Testing input nox", () => {
+  render(<App />);
+  let checkInput = screen.getByRole("textbox");
+  let checkInputPlaceholder = screen.getByPlaceholderText("Enter User Name");
+  expect(checkInput).toBeInTheDocument();
+  expect(checkInputPlaceholder).toBeInTheDocument();
+  expect(checkInput).toHaveAttribute("name", "username");
+  expect(checkInput).toHaveAttribute("id", "userId");
+  expect(checkInput).toHaveAttribute("type", "text");
+  expect(checkInput).toHaveAttribute("value", "Rajnish Pandey");
+});
